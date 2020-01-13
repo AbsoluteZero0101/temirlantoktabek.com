@@ -1,0 +1,2 @@
+# temirlantoktabek.com
+Personal Website
