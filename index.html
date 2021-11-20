@@ -366,6 +366,51 @@
     .mono {
       font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace;
     }
+
+  dfn {
+  background: rgba(0,0,0,0.2);
+  border-bottom: dashed 1px rgba(0,0,0,0.8);
+  padding: 0 0.4em;
+  cursor: help;
+  font-style: normal;
+  position: relative;
+
+}
+
+  /* box hover style */
+dfn::after {
+  content: attr(data-info);
+  display: inline;
+  position: absolute;
+  top: 22px; left: 0;
+  opacity: 0;
+  width: 230px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5em;
+  padding: 0.5em 0.8em;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  pointer-events: none; /* This prevents the box from apearing when hovered. */
+  transition: opacity 250ms, top 250ms;
+}
+dfn::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 12px; left: 20px;
+  opacity: 0;
+  width: 0; height: 0;
+  border: solid transparent 5px;
+  border-bottom-color: rgba(0,0,0,0.8);
+  transition: opacity 250ms, top 250ms;
+}
+dfn:hover {z-index: 2;} /* Keeps the info boxes on top of other elements */
+dfn:hover::after,
+dfn:hover::before {opacity: 1;}
+dfn:hover::after {top: 33px;}
+dfn:hover::before {top: 20px;}
+
   </style>
 </head>
 
@@ -377,20 +422,19 @@
 
     </header>
     <div class="page-body">
-      <p id="" class="experience">New Product Specialist @ Mercku Inc.</p>
+      <p id="" class="experience">New Product Specialist @ <a href="https://mercku.com">Mercku Inc.</a></p>
       <p id="" class="experience">Founder @ Vacant Project</p>
-      <p id="" class="experience">Co-Founder, Strategy @ Solve.kz</p>
+      <p id="" class="experience"><del>Co-Founder, Strategy @ Solve.kz<del></p>
       <p id="" class="experience"><del>Lead Digital Design @ Native Music Rehearsal Studio<del></p>
       <p id="" class="experience"><del>Digital Project Coordinator @ Peller.Tech</del></p>
       <p id="" class="experience"><del>Sales and Marketing Specialist @ HCD Design Studio</del></p>
       <p id="" class="experience"><del>Startup Consultant @ SAGE CANADA</del></p><br>
 
       <p id="" class="section">Links:</p>
-      <p id="" class="link"><a href="https://www.redbull.com/ca-en/basement-university-global-final-winners">Global Winners: RedBull Basement University 2018</a></p>
+      <p id="" class="link"><a href="https://www.redbull.com/ca-en/podcast-episodes/beyond-the-ordinary-s3-e6">"We had 24 hours to turn our idea into reality" | Beyond The Ordinary Podcast</a></p>
+      <p id="" class="link"><a href="https://www.redbull.com/ca-en/basement-university-global-final-winners">Global Winners: RedBull Basement University </a></p>
+      <p id="" class="link"><a href="https://startupheretoronto.com/type/profiles/vacants-spatial-analytics-help-buildings-understand-how-theyre-being-used/">"Vacant’s Spatial Analytics Help Buildings Understand How They’re Being Used" | StartUpHere Toronto</a></p>
       <p id="" class="link"><a href="https://www.ryerson.ca/tedrogersschool/news-events/2018/12/trsm-student-wins-red-bull-basement-university-competition-in-berlin/">TRSM student wins Red Bull Basement University Competition in Berlin</a></p>
-      <p id="" class="link"><a href="https://startupheretoronto.com/type/profiles/vacants-spatial-analytics-help-buildings-understand-how-theyre-being-used/">StartUpHere Toronto: Vacant Project</a></p>
-      <p id="" class="link"><a href="https://nativemusic.kz/">Native Music Rehearsal Studio</a></p>
-      <p id="" class="link"><a href="https://www.solve.kz/">Solve.kz</a></p>
     </div>
   </article>
 
@@ -407,7 +451,7 @@
         <h5>Contacts</h5>
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="https://www.linkedin.com/in/temirlan-toktabek/" target="_blank">LinkedIn</a></li>
-          <li><a class="text-muted" href="mailto:temer.toktabek@gmail.com">Email</a></li>
+          <li><a class="text-muted" href="https://angel.co/u/temirlan-toktabek" target="_blank">AngelList</a></li>
         </ul>
       </div>
       <div id="copyright" class="col-md-4" align="center" style="margin: auto 10px;">
